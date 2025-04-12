@@ -9,9 +9,17 @@ OUTPUT_DIR = "app/output"
 
 st.set_page_config(layout="wide")
 
-# 🎨 Centered Title
-st.markdown("<h1 style='text-align: center;'>Keswick Puppy Art 🐶🐕</h1>", unsafe_allow_html=True)
-st.markdown("### &nbsp;")  # Add some vertical space
+# 🎨 Centered Title & Description
+st.markdown("<h1 style='text-align: center;'>Keswick Puppies Style Transfer 🐕🐶🐶</h1>", unsafe_allow_html=True)
+st.markdown(
+    """
+    <p style='text-align: center; font-size: 18px;'>
+    Welcome to Keswick Puppies, a style transfer app that turns photos of puppies Lucy, Gracie, and Frankie into stylized works of art using famous painting styles or your own uploads.
+    </p>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown("### &nbsp;") 
 
 # 🧱 Layout: [pet] [space] [style] [space] [output]
 col1, spacer1, col2, spacer2, col3 = st.columns([1, 0.2, 1, 0.2, 1])
