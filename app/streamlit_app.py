@@ -26,7 +26,7 @@ with col1:
     pet_imgs = [f for f in os.listdir(pet_folder) if f.lower().endswith((".jpg", ".jpeg", ".png"))]
     selected_img = st.selectbox("Photo:", pet_imgs)
     pet_img_path = os.path.join(pet_folder, selected_img)
-    st.image(pet_img_path, caption="Your Pet", use_column_width=True)
+    st.image(pet_img_path, caption="Your Pet", use_container_width=True)
 
 # 🎨 STYLE SELECTION
 with col2:
@@ -39,12 +39,12 @@ with col2:
         selected_style = st.selectbox("Choose a style:", available_styles)
         style_img_path = os.path.join(STYLE_DIR, selected_style)
         style_img_pil = Image.open(style_img_path)
-        st.image(style_img_pil, caption="Selected Style", use_column_width=True)
+        st.image(style_img_pil, caption="Selected Style", use_container_width=True)
     else:
         style_file = st.file_uploader("Upload style image", type=["jpg", "jpeg", "png"])
         if style_file:
             style_img_pil = Image.open(style_file)
-            st.image(style_img_pil, caption="Uploaded Style", use_column_width=True)
+            st.image(style_img_pil, caption="Uploaded Style", use_container_width=True)
 
 # 🖼️ OUTPUT
 with col3:
@@ -55,5 +55,5 @@ with col3:
             final_path = stylize_image(pet_img_path, style_img_pil, output_path)
 
         st.success("Done!")
-        st.image(final_path, caption="Stylized Portrait", use_column_width=True)
+        st.image(final_path, caption="Stylized Portrait", use_container_width=True)
         st.download_button("Download Image", open(final_path, "rb"), file_name=os.path.basename(final_path))
