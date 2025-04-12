@@ -1,4 +1,4 @@
-# 🐾 Keswick Puppies Style Transfer 🎨
+# Keswick Puppies Style Transfer 🐕🐶🐶
 
 Welcome to Keswick Puppies, a style transfer app that turns photos of puppies Lucy, Gracie, and Frankie into stylized works of art using famous painting styles or your own uploads. [Try it live here](https://keswick-puppies.streamlit.app/)!
 
